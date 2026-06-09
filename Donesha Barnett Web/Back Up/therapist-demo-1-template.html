@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#TherapistName — Therapy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F7F4EF;
+    --warm-white: #FDFBF8;
+    --sage: #8A9E8C;
+    --sage-deep: #4D6B50;
+    --mist: #C8D4C9;
+    --clay: #B5896A;
+    --clay-light: #E8D5C6;
+    --ink: #2A2420;
+    --ink-soft: #5C4F47;
+    --gold: #C4973A;
+    --gold-light: #EDD9A3;
+    --section-bg: #EEE9E1;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--ink);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(253,251,248,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(180,160,140,0.2);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 72px;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+
+  .nav-logo span {
+    font-weight: 300;
+    font-style: italic;
+    text-transform: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+    display: block;
+    margin-top: -4px;
+  }
+
+  .nav-links {
+    display: flex; gap: 2.5rem; list-style: none;
+    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+  }
+
+  .nav-links a { color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--sage-deep); }
+
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--clay);
+    color: var(--clay);
+    padding: 10px 24px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s;
+    border-radius: 2px;
+  }
+
+  .nav-cta:hover { background: var(--clay); color: white; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 72px;
+  }
+
+  .hero-left {
+    padding: 8% 6% 8% 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--cream);
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-h1 em {
+    font-style: italic;
+    color: var(--sage-deep);
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    color: var(--ink-soft);
+    margin-bottom: 2.5rem;
+    max-width: 380px;
+    line-height: 1.8;
+  }
+
+  .hero-actions { display: flex; gap: 1rem; align-items: center; }
+
+  .btn-primary {
+    background: var(--sage-deep);
+    color: white;
+    padding: 14px 32px;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.25s;
+  }
+  .btn-primary:hover { background: var(--ink); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink-soft);
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--mist);
+  }
+
+  .hero-right {
+    position: relative;
+    background: var(--clay-light);
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .hero-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(160deg, var(--clay-light) 0%, var(--mist) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    color: var(--ink-soft);
+    opacity: 0.6;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-photo-placeholder svg {
+    width: 64px; height: 64px; opacity: 0.4;
+  }
+
+  .hero-accent {
+    position: absolute;
+    bottom: 40px;
+    left: -20px;
+    background: var(--warm-white);
+    padding: 20px 28px;
+    border-radius: 2px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+    max-width: 220px;
+  }
+
+  .hero-accent-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 4px;
+  }
+
+  .hero-accent-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--ink);
+    font-style: italic;
+  }
+
+  /* QUOTE BAND */
+  .quote-band {
+    background: var(--sage-deep);
+    padding: 4rem 10%;
+    text-align: center;
+  }
+
+  .quote-band blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.92);
+    line-height: 1.6;
+    max-width: 720px;
+    margin: 0 auto 1rem;
+  }
+
+  .quote-band cite {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mist);
+  }
+
+  /* SERVICES */
+  .services {
+    padding: 8rem 8%;
+    background: var(--warm-white);
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    color: var(--ink);
+    margin-bottom: 1rem;
+    max-width: 560px;
+    line-height: 1.2;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--sage-deep);
+  }
+
+  .section-intro {
+    font-size: 1rem;
+    color: var(--ink-soft);
+    max-width: 500px;
+    margin-bottom: 4rem;
+    line-height: 1.85;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .service-card {
+    background: var(--cream);
+    padding: 3rem 2.5rem;
+    position: relative;
+    transition: background 0.3s;
+  }
+
+  .service-card:hover { background: var(--clay-light); }
+
+  .service-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--mist);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+
+  .service-desc {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.9;
+    margin-bottom: 2rem;
+  }
+
+  .service-link {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    text-decoration: none;
+    border-bottom: 1px solid var(--mist);
+    padding-bottom: 2px;
+    transition: border-color 0.2s;
+  }
+
+  .service-link:hover { border-color: var(--sage-deep); }
+
+  /* ABOUT */
+  .about {
+    padding: 8rem 8%;
+    background: var(--section-bg);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .about-photo {
+    aspect-ratio: 3/4;
+    background: var(--clay-light);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    opacity: 0.7;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-photo::after {
+    content: '';
+    position: absolute;
+    top: 20px; right: -20px;
+    width: 100%; height: 100%;
+    border: 1px solid var(--clay);
+    border-radius: 2px;
+    pointer-events: none;
+  }
+
+  .about-content {}
+
+  .about-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-title em { font-style: italic; color: var(--sage-deep); }
+
+  .about-body {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    line-height: 1.95;
+    margin-bottom: 1.5rem;
+  }
+
+  .credentials {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .credential {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .credential-dot {
+    width: 6px; height: 6px;
+    background: var(--clay);
+    border-radius: 50%;
+    margin-top: 8px;
+    flex-shrink: 0;
+  }
+
+  .credential-text {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials {
+    padding: 8rem 8%;
+    background: var(--warm-white);
+  }
+
+  .testimonials-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .testimonial {
+    padding: 2.5rem;
+    border: 1px solid rgba(180,160,140,0.25);
+    border-radius: 2px;
+    position: relative;
+  }
+
+  .testimonial::before {
+    content: '"';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    color: var(--clay-light);
+    position: absolute;
+    top: 10px; left: 20px;
+    line-height: 1;
+  }
+
+  .testimonial-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    padding-top: 1.5rem;
+  }
+
+  .testimonial-author {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--clay);
+  }
+
+  /* CTA */
+  .cta-section {
+    padding: 8rem 8%;
+    background: var(--ink);
+    text-align: center;
+  }
+
+  .cta-section .section-label { color: var(--gold); }
+
+  .cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .cta-title em { font-style: italic; color: var(--gold); }
+
+  .cta-sub {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 2.5rem;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-gold {
+    background: var(--gold);
+    color: var(--ink);
+    padding: 16px 40px;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    font-weight: 500;
+    transition: all 0.25s;
+  }
+  .btn-gold:hover { background: var(--gold-light); }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 2rem 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.06em;
+  }
+
+  footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+  footer a:hover { color: rgba(255,255,255,0.7); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    #TherapistName
+    <span>#Degree, #TherapistTitle</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Services</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Fees</a></li>
+    <li><a href="#">FAQ</a></li>
+  </ul>
+  <button class="nav-cta">Book a Consultation</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Therapy · #City, #State · #SessionFormat</p>
+    <h1 class="hero-h1">
+      A space to be<br>
+      <em>fully yourself</em>,<br>
+      and heal.
+    </h1>
+    <p class="hero-sub">
+      #HeroTagline
+    </p>
+    <div class="hero-actions">
+      <button class="btn-primary">Schedule a Free Consult</button>
+      <button class="btn-secondary">Learn about my approach</button>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-placeholder">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="20" r="12" stroke="#8A9E8C" stroke-width="1.5"/>
+        <path d="M8 56c0-13.255 10.745-24 24-24s24 10.745 24 24" stroke="#8A9E8C" stroke-width="1.5"/>
+      </svg>
+      Your photo here
+    </div>
+    <div class="hero-accent">
+      <p class="hero-accent-label">Currently accepting</p>
+      <p class="hero-accent-text">New clients in #State1, #State2 &amp; remotely</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-band">
+  <blockquote>"#PersonalQuote"</blockquote>
+  <cite>— #TherapistName</cite>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  <p class="section-label">Areas of Practice</p>
+  <h2 class="section-title">Where we do<br><em>our best work</em> together</h2>
+  <p class="section-intro">
+    #ServicesIntroText
+  </p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-number">01</div>
+      <h3 class="service-name">#ServiceName1</h3>
+      <p class="service-desc">
+        #ServiceDescription1
+      </p>
+      <a href="#" class="service-link">Learn more</a>
+    </div>
+    <div class="service-card">
+      <div class="service-number">02</div>
+      <h3 class="service-name">#ServiceName2</h3>
+      <p class="service-desc">
+        #ServiceDescription2
+      </p>
+      <a href="#" class="service-link">Learn more</a>
+    </div>
+    <div class="service-card">
+      <div class="service-number">03</div>
+      <h3 class="service-name">#ServiceName3</h3>
+      <p class="service-desc">
+        #ServiceDescription3
+      </p>
+      <a href="#" class="service-link">Learn more</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="about-photo">
+    <div style="text-align:center; font-size:0.78rem; letter-spacing:0.08em; color:#8A9E8C;">
+      <svg width="48" height="48" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto 12px;opacity:0.5">
+        <circle cx="32" cy="20" r="12" stroke="#8A9E8C" stroke-width="1.5"/>
+        <path d="M8 56c0-13.255 10.745-24 24-24s24 10.745 24 24" stroke="#8A9E8C" stroke-width="1.5"/>
+      </svg>
+      Your photo
+    </div>
+  </div>
+  <div class="about-content">
+    <p class="section-label">About #TherapistName</p>
+    <h2 class="about-title">
+      Hi — I'm <em>glad</em><br>you found me.
+    </h2>
+    <p class="about-body">
+      #AboutParagraph1
+    </p>
+    <p class="about-body">
+      #AboutParagraph2
+    </p>
+    <div class="credentials">
+      <div class="credential">
+        <div class="credential-dot"></div>
+        <span class="credential-text">#Degree, #DegreeMajor — #University</span>
+      </div>
+      <div class="credential">
+        <div class="credential-dot"></div>
+        <span class="credential-text">Licensed in #State1 &amp; #State2</span>
+      </div>
+      <div class="credential">
+        <div class="credential-dot"></div>
+        <span class="credential-text">#TelehealthNote</span>
+      </div>
+      <div class="credential">
+        <div class="credential-dot"></div>
+        <span class="credential-text">In-person: #Neighborhood, #City</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="testimonials-header">
+    <p class="section-label">Client Experiences</p>
+    <h2 class="section-title" style="margin: 0 auto; text-align: center; max-width: 480px;">
+      Words from those<br>I've had the privilege to walk with
+    </h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial">
+      <p class="testimonial-text">
+        #Testimonial1Text
+      </p>
+      <p class="testimonial-author">— #Testimonial1Author</p>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-text">
+        #Testimonial2Text
+      </p>
+      <p class="testimonial-author">— #Testimonial2Author</p>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-text">
+        #Testimonial3Text
+      </p>
+      <p class="testimonial-author">— #Testimonial3Author</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <p class="section-label">Ready to begin?</p>
+  <h2 class="cta-title">The first step is<br><em>just one conversation</em>.</h2>
+  <p class="cta-sub">
+    I offer a free #ConsultLength-minute consultation so we can get a sense of fit before committing to anything.
+  </p>
+  <button class="btn-gold">Schedule Your Free Consult</button>
+</section>
+
+<footer>
+  <span>© 2025 #TherapistName, #Degree</span>
+  <span>#City, #State · Online across #State1 &amp; #State2</span>
+  <div style="display:flex;gap:1.5rem;">
+    <a href="#">Privacy</a>
+    <a href="#">Accessibility</a>
+    <a href="#">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
