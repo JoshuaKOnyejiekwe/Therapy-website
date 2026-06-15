@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>#TherapistName — Therapy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-logo">
+    #TherapistName
+    <span>#Degree · #TherapistTitle</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#specialties">Specialties</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#fees">Fees</a></li>
+  </ul>
+  <button class="nav-cta" id="navBookBtn">Book a Consultation</button>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">&#9776;</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Therapy · Baltimore, MD · #SessionFormat</p>
+    <h1 class="hero-h1">
+      You deserve a place<br>
+      to be <em>fully seen</em><br>
+      and supported.
+    </h1>
+    <p class="hero-sub">
+      #HeroTagline — a sentence or two about who you help and what you offer, written in warm, plain language.
+    </p>
+    <div class="hero-actions">
+      <button class="btn-primary" id="heroBookBtn">Schedule a Free Consult</button>
+      <a href="#about" class="btn-ghost">Learn about my approach</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-placeholder">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="20" r="12" stroke="#A07B6A" stroke-width="1.5"/>
+        <path d="M8 56c0-13.255 10.745-24 24-24s24 10.745 24 24" stroke="#A07B6A" stroke-width="1.5"/>
+      </svg>
+      Your photo here
+    </div>
+    <div class="hero-badge">
+      <p class="badge-label">Now accepting</p>
+      <p class="badge-text">New clients in #State1, #State2 &amp; remotely</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT ME -->
+<section class="about" id="about">
+  <div class="about-header">
+    <p class="section-label">About Me</p>
+    <h2 class="about-title">Hi — I'm <em>#TherapistFirstName</em>.</h2>
+    <p class="about-intro-placeholder">
+      Write a few sentences about yourself here. Who are you? What brings you to this work? Speak directly to the person reading — they're nervous, they're looking for a reason to trust you. Plain language, first person, warm tone.
+    </p>
+    <p class="about-intro-placeholder">
+      Continue here with a second paragraph. What does working with you actually feel like? Are you direct, warm, collaborative, structured? Tell them what to expect from a session with you.
+    </p>
+  </div>
+  <div class="about-photo">
+    <div class="about-photo-inner">
+      <svg width="52" height="52" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="20" r="12" stroke="#A07B6A" stroke-width="1.5"/>
+        <path d="M8 56c0-13.255 10.745-24 24-24s24 10.745 24 24" stroke="#A07B6A" stroke-width="1.5"/>
+      </svg>
+      Your photo
+    </div>
+  </div>
+  <div class="about-credentials">
+    <div class="credential">
+      <div class="credential-dot"></div>
+      <span class="credential-text">#Degree, #DegreeMajor — #University</span>
+    </div>
+    <div class="credential">
+      <div class="credential-dot"></div>
+      <span class="credential-text">Licensed in #State1 &amp; #State2</span>
+    </div>
+    <div class="credential">
+      <div class="credential-dot"></div>
+      <span class="credential-text">#TelehealthNote</span>
+    </div>
+    <div class="credential">
+      <div class="credential-dot"></div>
+      <span class="credential-text">In-person: #Neighborhood, #City</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES — with booking CTA under each -->
+<section class="services" id="services">
+  <div class="services-header">
+    <p class="section-label">Services</p>
+    <h2 class="section-title">You don't have to<br><em>figure it out alone</em>.</h2>
+    <p class="section-intro">
+      #ServicesIntroText — a sentence or two describing who you work with and what you help with.
+    </p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-number">01</div>
+      <h3 class="service-name">#ServiceName1</h3>
+      <p class="service-desc">#ServiceDescription1 — describe this service in the client's language, not clinical terms.</p>
+      <button class="service-book-btn" data-booking="true">Book a Consultation →</button>
+    </div>
+    <div class="service-card">
+      <div class="service-number">02</div>
+      <h3 class="service-name">#ServiceName2</h3>
+      <p class="service-desc">#ServiceDescription2</p>
+      <button class="service-book-btn" data-booking="true">Book a Consultation →</button>
+    </div>
+    <div class="service-card">
+      <div class="service-number">03</div>
+      <h3 class="service-name">#ServiceName3</h3>
+      <p class="service-desc">#ServiceDescription3</p>
+      <button class="service-book-btn" data-booking="true">Book a Consultation →</button>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALTIES -->
+<section class="specialties-section" id="specialties">
+  <div class="specialties-header">
+    <p class="section-label">My Specialties</p>
+    <h2 class="section-title">Areas I<br><em>focus in</em></h2>
+    <p class="section-intro">Fill in the areas below with the types of clients and concerns you specialize in.</p>
+  </div>
+  <div class="specialties-grid">
+    <div class="specialty-card">
+      <div class="specialty-icon">&#9670;</div>
+      <h4 class="specialty-name">#SpecialtyName1</h4>
+      <p class="specialty-desc">#SpecialtyDesc1 — e.g. "Anxiety, worry, and the feeling of always waiting for something to go wrong."</p>
+    </div>
+    <div class="specialty-card">
+      <div class="specialty-icon">&#9670;</div>
+      <h4 class="specialty-name">#SpecialtyName2</h4>
+      <p class="specialty-desc">#SpecialtyDesc2 — e.g. "Trauma and PTSD, including childhood experiences that still affect your daily life."</p>
+    </div>
+    <div class="specialty-card">
+      <div class="specialty-icon">&#9670;</div>
+      <h4 class="specialty-name">#SpecialtyName3</h4>
+      <p class="specialty-desc">#SpecialtyDesc3</p>
+    </div>
+    <div class="specialty-card">
+      <div class="specialty-icon">&#9670;</div>
+      <h4 class="specialty-name">#SpecialtyName4</h4>
+      <p class="specialty-desc">#SpecialtyDesc4</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS / HOW SESSIONS WORK -->
+<section class="process-section" id="process">
+  <div class="process-header">
+    <p class="section-label">How It Works</p>
+    <h2 class="section-title">How we'll<br><em>work together</em></h2>
+    <p class="section-intro">Here's exactly what to expect from our first contact to ongoing sessions.</p>
+  </div>
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h4 class="step-title">You reach out</h4>
+        <p class="step-desc">Book a free consultation using the button on this page or send me a message below. You'll hear back from me within #ResponseTime — e.g. "1–2 business days."</p>
+      </div>
+    </div>
+    <div class="process-connector"></div>
+    <div class="process-step">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h4 class="step-title">Free consultation call</h4>
+        <p class="step-desc">#ConsultDesc — e.g. "We spend about 20 minutes getting to know each other. I'll ask what brings you in, answer your questions, and we'll see if we're a good fit. No pressure."</p>
+      </div>
+    </div>
+    <div class="process-connector"></div>
+    <div class="process-step">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h4 class="step-title">First session</h4>
+        <p class="step-desc">#FirstSessionDesc — e.g. "Your first full session is about 50 minutes. We go deeper — your history, what you're hoping to change, and what working together might look like."</p>
+      </div>
+    </div>
+    <div class="process-connector"></div>
+    <div class="process-step">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <h4 class="step-title">Ongoing sessions</h4>
+        <p class="step-desc">#OngoingDesc — e.g. "Most clients meet weekly or biweekly. Sessions are 50 minutes. We check in regularly on progress and adjust as needed."</p>
+      </div>
+    </div>
+  </div>
+  <div class="process-note">
+    <p><strong>Response time:</strong> #ResponseTimeNote — e.g. "I respond to all inquiries within 1–2 business days. For urgent matters, please contact a crisis line or 911."</p>
+  </div>
+</section>
+
+<!-- FEES -->
+<section class="fees-section" id="fees">
+  <div class="fees-inner">
+    <div class="fees-header">
+      <p class="section-label">Fees</p>
+      <h2 class="section-title">Clear, upfront<br><em>pricing</em>.</h2>
+    </div>
+    <div class="fees-grid">
+      <div class="fee-card">
+        <p class="fee-type">Individual Session</p>
+        <p class="fee-price">$#Amount</p>
+        <p class="fee-detail">50-minute session</p>
+      </div>
+      <div class="fee-card">
+        <p class="fee-type">Initial Consultation</p>
+        <p class="fee-price">Free</p>
+        <p class="fee-detail">#ConsultLength minutes · no commitment</p>
+      </div>
+      <div class="fee-card">
+        <p class="fee-type">Sliding Scale</p>
+        <p class="fee-price">Available</p>
+        <p class="fee-detail">A limited number of reduced-fee spots are available. Ask me.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <p class="footer-name">#TherapistName, #Degree</p>
+      <p class="footer-location">#City, #State · Online across #State1 &amp; #State2</p>
+    </div>
+    <div class="footer-contact">
+      <p class="footer-contact-label">Get in touch</p>
+      <a href="mailto:#TherapistEmail" class="footer-email">#TherapistEmail</a>
+      <a href="tel:#TherapistPhone" class="footer-phone">#TherapistPhone</a>
+    </div>
+    <div class="footer-socials">
+      <p class="footer-contact-label">Follow along</p>
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="Instagram">
+          <!-- Instagram icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+          </svg>
+          Instagram
+        </a>
+        <a href="#" class="social-link" aria-label="LinkedIn">
+          <!-- LinkedIn icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="2" width="20" height="20" rx="3"/>
+            <line x1="8" y1="10" x2="8" y2="17"/>
+            <line x1="8" y1="7" x2="8" y2="7.5" stroke-width="2"/>
+            <path d="M12 10v7M12 13a3 3 0 0 1 6 0v4"/>
+          </svg>
+          LinkedIn
+        </a>
+        <a href="#" class="social-link" aria-label="Psychology Today">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M9 9h4a2 2 0 0 1 0 4H9v4"/>
+          </svg>
+          Psychology Today
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 #TherapistName, #Degree</span>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Accessibility</a>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
