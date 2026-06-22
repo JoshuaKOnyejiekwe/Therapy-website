@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>#TherapistName — Therapy</title>
+  <title>Donesha Barnett — Therapy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 
 <nav>
   <div class="nav-logo">
-    #TherapistName
+    Donesha Barnett
     <span>#Degree, #TherapistTitle</span>
   </div>
   <ul class="nav-links">
@@ -60,7 +60,7 @@
 <!-- QUOTE -->
 <section class="quote-band">
   <blockquote>"#PersonalQuote"</blockquote>
-  <cite>— #TherapistName</cite>
+  <cite>— Donesha Barnett</cite>
 </section>
 
 <!-- SERVICES -->
@@ -102,14 +102,14 @@
     </div>
   </div>
   <div class="about-content">
-    <p class="section-label">About #TherapistName</p>
+    <p class="section-label">About Donesha Barnett</p>
     <h2 class="about-title">Hi — I'm <em>glad</em><br>you found me.</h2>
     <p class="about-body">#AboutParagraph1</p>
     <p class="about-body">#AboutParagraph2</p>
     <div class="credentials">
       <div class="credential">
         <div class="credential-dot"></div>
-        <span class="credential-text">#Degree, #DegreeMajor — #University</span>
+        <span class="credential-text">#Degree, #DegreeMajor — Morgan State University</span>
       </div>
       <div class="credential">
         <div class="credential-dot"></div>
@@ -186,7 +186,7 @@
 </section>
 
 <footer>
-  <span>© 2025 #TherapistName, #Degree</span>
+  <span>© 2025 Donesha Barnett, #Degree</span>
   <span>#City, #State · Online across #State1 &amp; #State2</span>
   <div class="footer-links">
     <a href="#">Privacy</a>

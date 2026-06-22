@@ -612,7 +612,7 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(30, 40, 40, 0.08); }
   line-height: 1.85;
 }
 
-.process-note {
+/*.process-note {
   margin-top: 3rem;
   padding: 1.4rem 1.8rem;
   background: var(--linen);
@@ -627,7 +627,7 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(30, 40, 40, 0.08); }
   line-height: 1.8;
 }
 
-.process-note strong { color: var(--ink); font-weight: 500; }
+.process-note strong { color: var(--ink); font-weight: 500; } */
 
 /* ── FEES — DARK SECTION ─────────────────────────────────
    Uses .fees-label / .fees-title instead of shared .section-*
